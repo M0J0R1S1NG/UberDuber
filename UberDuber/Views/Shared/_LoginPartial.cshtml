@@ -1,0 +1,63 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using UberDuber.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+            </li>
+            <li>
+
+
+
+
+
+
+
+
+                <div class="cartInfo"></div>
+                @*<span class="simpleCart_quantity"></span>*@
+                @*<div id="cartPopover">
+                    <div id="triangle">&#x25B2;</div>
+                    <div class="simpleCart_items"></div>
+                    <div id="cartData" class="clearfix">
+                        <div class="left"><strong>Items: </strong><span class="simpleCart_quantity"></span></div>
+                        <div class="right"><strong>Total: </strong><span class="simpleCart_total"></span></div>
+                    </div>
+                    <div id="popoverButtons" class="clearfix">
+                        <a href="shopping" class="hudbtn primary left">View</a>
+                        <a href="javascript:;" class="simpleCart_checkout hudbtn primary right">Checkout</a>
+                    </div>
+                </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+               
+            </li>
+            <li>
+                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
+            </li>
+        </ul>
+    </form>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+        <li><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
+    </ul>
+}

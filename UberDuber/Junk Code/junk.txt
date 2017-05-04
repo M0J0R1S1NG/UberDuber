@@ -1,0 +1,112 @@
+﻿
+    emailCheckout = function () {
+        alert("====== FINISH YOUR SHOPPING ======\n\nThank you for purchasing our product.\nWe need your data to delivery our product. \n\nPlease, enter your data in to the next box, \n\n-------------- Press OK to continue --------------");
+        var b = prompt("Enter your Email for invoice order: ");
+        var bb = prompt("Enter your name: ");
+        var bbb = prompt("Enter your address: ");
+        var bbbb = prompt("Enter your phone number, I will call or send you a message about the product you purchase: ");
+        itemsString = "";
+        esubtotal = 0;
+        etotal = 0;
+        for (var c in this.items) {
+            var d = this.items[c];
+            esubtotal = Math.round(d.quantity * d.price * 100) / 100;
+            itemsString += d.quantity + " x " + d.name + " --> " + d.quantity + " x Rp." + d.price + " = Rp." + String(esubtotal) + "";
+            etotal += esubtotal
+        }
+        etotal = Math.round(etotal * 100) / 100;
+        itemsString += "Total: Rp." + String(etotal);
+        var e = document.createElement("form");
+        //e.style.display = "none";
+        e.method = "POST";
+        e.action = "EmailShoppingUrl";
+        e.acceptCharset = "utf-8";
+        e.appendChild(e.createElement("jcitems", itemsString));
+        e.appendChild(e.createElement("jcremite", b));
+        e.appendChild(e.createElement("buyername", bb));
+        e.appendChild(e.createElement("buyeralamat", bbb));
+        e.appendChild(e.createElement("buyerhp", bbbb));
+        e.appendChild(e.createElement("email", this.email));
+        e.appendChild(e.createElement("catatanTambahanInvoice", this.catatanTambahanInvoice));
+        e.appendChild(e.createElement("formatsmsKonfirmasi", this.formatsmsKonfirmasi));
+        e.appendChild(e.createElement("contohformatsmsKonfirmasi", this.contohformatsmsKonfirmasi));
+        e.appendChild(e.createElement("urlWebsite", this.urlWebsite));
+        e.appendChild(e.createElement("alamatPemilik", this.alamatPemilik));
+        e.appendChild(e.createElement("noHP", this.noHP));
+        e.appendChild(e.createElement("urlFacebook", this.urlFacebook));
+        e.appendChild(e.createElement("urlTwitter", this.urlTwitter));
+        e.appendChild(e.createElement("akunbank1", this.akunbank1));
+        e.appendChild(e.createElement("norek1", this.norek1));
+        e.appendChild(e.createElement("namarek1", this.namarek1));
+        e.appendChild(e.createElement("akunbank2", this.akunbank2));
+        e.appendChild(e.createElement("norek2", this.norek2));
+        e.appendChild(e.createElement("namarek2", this.namarek2));
+        e.appendChild(e.createElement("akunbank3", this.akunbank3));
+        e.appendChild(e.createElement("norek3", this.norek3));
+        e.appendChild(e.createElement("namarek3", this.namarek3));
+        e.appendChild(e.createElement("akunbank4", this.akunbank4));
+        e.appendChild(e.createElement("norek4", this.norek4));
+        e.appendChild(e.createElement("namarek4", this.namarek4));
+        e.appendChild(e.createElement("akunbank5", this.akunbank5));
+        e.appendChild(e.createElement("norek5", this.norek5));
+        e.appendChild(e.createElement("namarek5", this.namarek5));
+        e.appendChild(e.createElement("akunbank6", this.akunbank6));
+        e.appendChild(e.createElement("norek6", this.norek6));
+        e.appendChild(e.createElement("namarek6", this.namarek6));
+        e.appendChild(e.createElement("businessName", this.businessName));
+        e.appendChild(e.createElement("urlreferrer", this.urlReferrer));
+        document.body.appendChild(e);
+        e.submit();
+        document.body.removeChild(e);
+        return
+    };
+   
+
+
+simpleCart.email = 'abc@gmail.com';
+simpleCart.checkoutTo = Email;
+simpleCart.currency = INR;
+simpleCart.urlWebsite = 'www.abc.blogspot.com';
+simpleCart.taxRate = 0.00;
+simpleCart.shippingFlatRate = 0.00;
+simpleCart.shippingQuantityRate = 1.00;
+simpleCart.alamatPemilik = 'sco # 361 ,city-zarakpur , state-punjab , country-India ';
+simpleCart.noHP = '+911234567899';
+simpleCart.urlFacebook = 'http://www.facebook.com/pages/your facebook';
+simpleCart.urlTwitter = 'https://twitter.com/your twitter';
+simpleCart.akunbank1 = 'abcdef bank';
+simpleCart.norek1 = '55113361232';
+simpleCart.namarek1 = 'abc xyz ';
+
+simpleCart.akunbank2 = 'aef bank';
+simpleCart.norek2 = '55555361232';
+simpleCart.namarek2 = 'abc xyz ';
+
+simpleCart.akunbank3 = 'cdef bank';
+simpleCart.norek3 = '55133331232';
+simpleCart.namarek3 = 'abc xyz ';
+
+
+
+simpleCart.akunbank4 = 'abc bank';
+simpleCart.norek4 = '55100001232';
+simpleCart.namarek4 = 'abc xyz ';
+
+simpleCart.akunbank5 = 'abcd bank';
+simpleCart.norek5 = '55113360098';
+simpleCart.namarek5 = 'abc xyz ';
+
+simpleCart.akunbank6 = 'abcde bank';
+simpleCart.norek6 = '55113360000';
+simpleCart.namarek6 = 'abc xyz ';
+
+
+
+simpleCart.urlReferrer = 'http://www.abc.blogspot.com';
+simpleCart.businessName = 'abc xyz';
+simpleCart.formatsmsKonfirmasi= '(Name, Email, transfer amount, name of bank and branch  where you did transfer, Transfer DATE)';
+simpleCart.contohformatsmsKonfirmasi= 'xyz, xyz@xyz.com, INR 1500 , abc-qwerty , 12 December 2012 ';
+simpleCart.catatanTambahanInvoice= '(Have a nice day for you and I hope you enjoy it)';
+simpleCart.cartHeaders = ["Name", "thumb_image" , "Quantity_input" , "Total", "remove" ];
+
+

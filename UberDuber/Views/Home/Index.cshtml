@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="~/images/greenhouse.jpg" alt="ASP.NET" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                   Welcome to UberDuber the best same day delivery service in Toronto
+                    <a class="btn btn-default" href="Shopping">
+                        If your already registered go stright to the order page
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/marijuana_purple.jpg" alt="Uber Duber" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                   Explore what we have to offer 
+                    <a class="btn btn-default" href="Not Ready">
+                        Learn More
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/marijuana-flower-5.jpg" alt="Package Management" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Sign up your registration fee is fully refunded against your first order
+                    <a class="btn btn-default" href="Account/Register">
+                        Register
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/images/afghan_black_hash_04-980x735.jpg" alt="Microsoft Azure" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+                <p>
+                    Join our frequent flyer program
+                    <a class="btn btn-default" href="FrequentFlyer">
+                        Learn More
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Accounts</h2>
+        <ul>
+           
+            <li><a href="Account/Register">Register</a> Sign-up for delivery service</li>
+            <li><a href="Customers">Account</a> Manage your account</li>
+           
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>Shopping</h2>
+        <ul>
+            <li><a href="Views/Shopping">Shop</a>Browse our menus</li>
+            <li><a href="orders/index">Deliveries</a>View your pending delivery</li>
+            <li><a href="orders/index">Orders</a></li>
+
+           
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>See how it works</h2>
+        <ul>
+            <li><a href="Views/HowItWorks">See how your orders are processed and delivered</a></li>
+          
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>Help and Suport</h2>
+        <ul>
+            <li><a href="contacts">Delivery Help</a></li>
+            <li><a href="contacts">Website Help</a></li>
+            <li><a href="contacts">Accounts Help</a></li>
+            <li><a href="contacts">Ordering Help</a></li>
+            
+        </ul>
+    </div>
+</div>

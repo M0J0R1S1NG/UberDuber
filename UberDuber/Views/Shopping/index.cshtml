@@ -1,0 +1,141 @@
+
+@{
+    ViewData["Title"] = "Shopping";
+}
+
+<h2>Shopping</h2>
+<table><tr><td>
+<div class="simpleCart_shelfItem">
+    <img class="item_add" src="~/images/Moroccan.jpg" height="75px" width="75px" />
+    <h2 class="item_name">Blond Hash </h2>
+    <input type="text" value="1" class="item_Quantity">
+    <span class="item_price">$35.00</span>
+    <a class="item_add" href="javascript:;"> Add to Cart </a>
+</div></td><td>
+<div class="simpleCart_shelfItem">
+    <img class="item_add" src="~/images/Blissberry.jpg" height="75px" width="75px" />
+    <h2 class="item_name">OG Kush</h2>
+    <input type="text" value="1" class="item_Quantity">
+    <span class="item_price">$35.00</span>
+    <a class="item_add" href="javascript:;"> Add to Cart </a>
+</div></td><td>
+<div class="simpleCart_shelfItem">
+    <img class="item_add" src="~/images/lovelypurple.jpg" height="75px" width="75px" />
+    <h2 class="item_name">Purple Star</h2>
+    <input type="text" value="1" class="item_Quantity">
+    <span class="item_price">$35.00</span>
+    <a class="item_add" href="javascript:;"> Add to Cart </a>
+</div></td><td>
+<div class="simpleCart_shelfItem">
+    <img class="item_add" src="~/images/marijuana-flower-5.jpg" height="75px" width="75px" />
+    <h2 class="item_name">Sativa Hybrid</h2>
+    <input type="text" value="1" class="item_Quantity">
+    <span class="item_price">$35.00</span>
+    <a class="item_add" href="javascript:;"> Add to Cart </a>
+</div></td><td>
+<div class="simpleCart_shelfItem">
+    <img class="item_add" src="~/images/purple_cheese_bud.jpg" height="75px" width="75px" />
+    <h2 class="item_name">Cheese Bud</h2>
+    <input type="text" value="1" class="item_Quantity">
+    <span class="item_price">$35.00</span>
+    <a class="item_add" href="javascript:;"> Add to Cart </a>
+</div></td></tr></table>
+
+
+<h2>Cart</h2>
+<div class="yabholder" >
+    <div >
+        <Table>
+            <tr>
+                <td colspan="2" class="tabcell" ><div class="simpleCart_items"></div></td>
+            </tr>
+           <tr>
+                <td  class="tabcell" >Sub Total</td>
+                <td class="tabcell" align="right"><div class="simpleCart_total"></div></td>
+           </tr>
+            <tr>
+                <td  class="tabcell">Delivery Fee</td>
+                <td class="tabcell" ><div class="simpleCart_shipping"></div></td>
+            </tr>
+            <tr>
+                <td  class="tabcell">GST</td>
+                <td class="tabcell"><div class="simpleCart_tax"></div></td>
+            </tr>
+            <tr>
+                <td  class="tabcell">Total</td>
+                <td class="tabcell" ><div class="simpleCart_grandTotal"></div></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="tabcell"><button class="simpleCart_checkout">Checkout</button>
+               <button class="simpleCart_empty">Empty Cart</button></td>
+            </tr>
+        </Table>
+    </div>
+</div>
+<script>
+
+
+simpleCart({
+    // array representing the format and columns of the cart,
+    // see the cart columns documentation
+    cartColumns: [
+        //{ view: "image", attr: "thumb", label: false},
+        { view: "remove", text: "X", label: "Remove" },
+        { attr: "name", label: "Items" },
+        { view: "currency", attr: "price", label: "Price"},
+        //{ view: "decrement", label: false},
+        { attr: "quantity", label: "Qty"},
+        //{ view: "increment", label: false},
+        { view: "currency", attr: "total", label: "SubTotal" }
+       
+    ],
+    // "div" or "table" - builds the cart as a
+    // table or collection of divs
+    cartStyle: "table",
+    // how simpleCart should checkout, see the
+    // checkout reference for more info
+    checkout: {
+        type: "PayPal" ,
+        email: "a2bman@hotmail.com"
+    },
+    // set the currency, see the currency
+    // reference for more info
+    currency: "CAD",
+    // collection of arbitrary data you may want to store
+    // with the cart, such as customer info
+    data: {},
+    // set the cart langauge
+    // (may be used for checkout)
+    language: "english-us",
+    // array of item fields that will not be
+    // sent to checkout
+    excludeFromCheckout: [],
+    // custom function to add shipping cost
+    shippingCustom: null,
+    // flat rate shipping option
+    shippingFlatRate: 5,
+    // added shipping based on this value
+    // multiplied by the cart quantity
+    shippingQuantityRate: 0,
+    // added shipping based on this value
+    // multiplied by the cart subtotal
+    shippingTotalRate: 0,
+    // tax rate applied to cart subtotal
+    taxRate: 0.13,
+    // true if tax should be applied to shipping
+    taxShipping: true,
+    // event callbacks
+    beforeAdd            : null,
+    afterAdd            : null,
+    load                : null,
+    beforeSave        : null,
+    afterSave            : null,
+    update            : null,
+    ready            : null,
+    checkoutSuccess    : null,
+    checkoutFail        : null,
+    beforeCheckout        : null,
+        beforeRemove           : null
+    });
+
+    </script>
